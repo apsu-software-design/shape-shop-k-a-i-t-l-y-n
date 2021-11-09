@@ -13,3 +13,27 @@ export class Product {
     public getPrice(): number { return this.price; }
     public getDescription(): string { return this.description; }
 }
+
+export class ProductList{
+    private productList;
+    private quantityList;
+
+    public constructor(){
+        this.productList = [];
+        this.quantityList = [];
+    }
+
+    public addProduct(name:string) :void 
+    { 
+
+    }
+    public removeProduct(index:number):void
+    {
+
+    }
+    public getProducts():Product
+    {
+
+    }
+
+}
