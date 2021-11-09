@@ -13,7 +13,7 @@ export class Product {
     public getPrice(): number { return this.price; }
     public getDescription(): string { return this.description; }
 }
-
+//MODEL
 export class ProductList{
     private productList: Product[];
     private quantityList: number[];
@@ -38,3 +38,5 @@ export class ProductList{
     }
 
 }
+
+//VIEW
