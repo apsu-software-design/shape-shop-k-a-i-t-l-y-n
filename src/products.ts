@@ -29,7 +29,7 @@ export class ProductList{
     }
     public removeProduct(index:number):void
     {
-
+        this.productList.splice(index, 1);
     }
     public getProductList():ProductList
     {
