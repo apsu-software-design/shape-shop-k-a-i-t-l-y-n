@@ -15,25 +15,26 @@ export class Product {
 }
 
 export class ProductList{
-    private productList;
-    private quantityList;
+    private productList: Product[];
+    private quantityList: number[];
 
     public constructor(){
         this.productList = [];
         this.quantityList = [];
     }
 
-    public addProduct(name:string) :void 
+    public addProduct(product:Product) :void 
     { 
-
+        this.productList.push(product);
     }
     public removeProduct(index:number):void
     {
 
     }
-    public getProducts():Product
+    public getProductList():ProductList
     {
-
+        let productList = this.productList;
+        return productList;
     }
 
 }
