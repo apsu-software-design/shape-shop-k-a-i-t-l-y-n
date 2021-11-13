@@ -23,13 +23,15 @@ export class ProductList{
         this.quantityList = [];
     }
 
-    public addProduct(product:Product) :void 
+    public addProduct(product:Product, quantity: number) :void 
     { 
         this.productList.push(product);
+        this.quantityList.push(quantity);
     }
     public removeProduct(index:number):void
     {
         this.productList.splice(index, 1);
+        this.quantityList.splice(index, 1);
     }
     public getProductList():ProductList
     {
@@ -40,3 +42,55 @@ export class ProductList{
 }
 
 //VIEW
+
+//ShoppingCart View
+public export ShoppingCartView{
+
+}
+
+//Show total price
+public export TotalPriceView{
+
+}
+//Show list of product names
+public export ProductNamesView{
+    
+}
+
+//getView returns string object
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
