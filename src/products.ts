@@ -42,18 +42,50 @@ export class ProductList{
 }
 
 //VIEW
+function viewItemsInCart() {
+    for (let i = 0; i < shopping_cart.length; i++) {
+        console.log("");
+        console.log("       Name: "+shopping_cart[i].getName());
+        console.log("      Price: "+shopping_cart[i].getPrice());
+        console.log("Description: "+shopping_cart[i].getDescription());
+        console.log("   Quantity: "+quantity_cart[i]);
+    }
+}
+
+function viewCartTotal() {
+    let total: number = 0;
+    for (let i = 0; i < shopping_cart.length; i++) {
+        total += shopping_cart[i].getPrice() * quantity_cart[i];
+    }
+    console.log("Shopping Cart Total: "+total);
+}
 
 //ShoppingCart View
-public export ShoppingCartView{
+export ShoppingCartView{
+    private productList: ProductList;
+
+    constructor(productList:ProductList)
+    {
+        this.productList = productList;
+    }
+
+    getView:string()
+    {
+        for
+        String shoppingCart = "Name: " + this.product.getName() + "\nPrice: " + this.product.getPrice() + "\nDescription: " + this.product.getDescription()
+        + "\nQuantity: " + 
+    }
+
+
 
 }
 
 //Show total price
-public export TotalPriceView{
+export TotalPriceView{
 
 }
 //Show list of product names
-public export ProductNamesView{
+export ProductNamesView{
     
 }
 
