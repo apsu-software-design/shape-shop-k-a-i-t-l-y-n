@@ -15,30 +15,30 @@ export class Product {
 }
 //MODEL
 export class ProductList{
-    static productList: Product[];
-    static quantityList: number[];
+    private productList: Product[];
+    private quantityList: number[];
 
     public constructor(){
-        ProductList.productList = [];
-        ProductList.quantityList = []
+        this.productList = [];
+        this.quantityList = []
     }
     
-    static addProduct(product:Product) :void 
+    public addProduct(product:Product) :void 
     { 
         this.productList.push(product);
     }
-    static addQuantity(quantity: number) : void
+    public addQuantity(quantity: number) : void
     {
          this.quantityList.push(quantity);
     }
-    static removeProduct(index:number):void
+    public removeProduct(index:number):void
     {
         this.productList.splice(index, 1);
         this.quantityList.splice(index, 1);
     }
 
-    static getProductList():Product[] { return this.productList; }
-    static getQuantityList(): number[] { return this.quantityList; }
+    public getProductList():Product[] { return this.productList; }
+    public getQuantityList(): number[] { return this.quantityList; }
 
 }
 

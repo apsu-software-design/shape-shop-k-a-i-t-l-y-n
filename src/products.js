@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductNamesView = exports.TotalPriceView = exports.ShoppingCartView = exports.ProductList = exports.Product = void 0;
 var Product = /** @class */ (function () {
     function Product(name, price, description) {
@@ -16,21 +16,21 @@ exports.Product = Product;
 //MODEL
 var ProductList = /** @class */ (function () {
     function ProductList() {
-        ProductList.productList = [];
-        ProductList.quantityList = [];
+        this.productList = [];
+        this.quantityList = [];
     }
-    ProductList.addProduct = function (product) {
+    ProductList.prototype.addProduct = function (product) {
         this.productList.push(product);
     };
-    ProductList.addQuantity = function (quantity) {
+    ProductList.prototype.addQuantity = function (quantity) {
         this.quantityList.push(quantity);
     };
-    ProductList.removeProduct = function (index) {
+    ProductList.prototype.removeProduct = function (index) {
         this.productList.splice(index, 1);
         this.quantityList.splice(index, 1);
     };
-    ProductList.getProductList = function () { return this.productList; };
-    ProductList.getQuantityList = function () { return this.quantityList; };
+    ProductList.prototype.getProductList = function () { return this.productList; };
+    ProductList.prototype.getQuantityList = function () { return this.quantityList; };
     return ProductList;
 }());
 exports.ProductList = ProductList;

@@ -10,6 +10,9 @@ let shopping_cart: Product[] = [];
 let quantity_cart: number[] = [];
 */
 
+//Global variable Product List
+let productListModel:ProductList;
+
 /**
  * Function to run the UI
  */
@@ -61,9 +64,9 @@ function letUserSelectItem() {
     let response = readlineSync.question('> ')
 
     switch(response) { //handle each response
-      case '1': let product1:Product = new Product("Triangle", 3.5, "It's got three sides!"); ProductList.addProduct(product1); break;
-      case '2': ProductList.addProduct(new Product("Square", 4.5, "It's got four sides!")); break;
-      case '3': ProductList.addProduct(new Product("Pentagon", 5.5, "It's got five sides!")); break;
+      case '1': let product1:Product = new Product("Triangle", 3.5, "It's got three sides!"); productListModel.addProduct(product1); break;
+      case '2': productListModel.addProduct(new Product("Square", 4.5, "It's got four sides!")); break;
+      case '3': productListModel.addProduct(new Product("Pentagon", 5.5, "It's got five sides!")); break;
       default: console.log('Invalid option!');
     }
     console.log(''); //extra empty line for revisiting
@@ -74,16 +77,16 @@ function letUserSelectQuantity() {
   `);
 
     let response = readlineSync.question('> ')
-    ProductList.addQuantity(parseInt(response));
+    productListModel.addQuantity(parseInt(response));
     console.log(''); //extra empty line for revisiting
 }
 
 function removeItemFromCart() {
     console.log(`Select an item to be removed from the cart.
   `);
-    let productList:Product[] = ProductList.getProductList();
+    let productList:Product[] = productListModel.getProductList();
 
-    for (let i = 0; i < ProductList.getProductList().length; i++) {
+    for (let i = 0; i < productListModel.getProductList().length; i++) {
         let productName = productList[i].getName()
         console.log(ProductNamesView.getView(productName));
     }
@@ -91,16 +94,16 @@ function removeItemFromCart() {
     let response = readlineSync.question('> ')
     let toRemove = parseInt(response);
 
-    ProductList.removeProduct(toRemove);
+    productListModel.removeProduct(toRemove);
 
     console.log(''); //extra empty line for revisiting
 }
 
 function viewItemsInCart() {
-    let productList:Product[] = ProductList.getProductList();
-    let quantityList:number[] = ProductList.getQuantityList();
+    let productList:Product[] = productListModel.getProductList();
+    let quantityList:number[] = productListModel.getQuantityList();
 
-    for (let i = 0; i < ProductList.getProductList().length; i++) {
+    for (let i = 0; i < productListModel.getProductList().length; i++) {
         let productName = productList[i].getName();
         let productPrice = productList[i].getPrice();
         let productDescription = productList[i].getDescription();
@@ -112,10 +115,10 @@ function viewItemsInCart() {
 
 function viewCartTotal() {
     let total: number = 0;
-    let productList: Product[] = ProductList.getProductList();
-    let quantityList: number[] = ProductList.getQuantityList();
+    let productList: Product[] = productListModel.getProductList();
+    let quantityList: number[] = productListModel.getQuantityList();
 
-    for (let i = 0; i < ProductList.getProductList().length; i++) {
+    for (let i = 0; i < productListModel.getProductList().length; i++) {
         total += productList[i].getPrice() * quantityList[i];
     }
     console.log(TotalPriceView.getView(total));
