@@ -1,7 +1,7 @@
 "use strict";
 //User Interface for The Shopping Cart 
 //@author James Church
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.start = void 0;
 var readlineSync = require("readline-sync"); //for easier repeated prompts
 var products_1 = require("./products");
