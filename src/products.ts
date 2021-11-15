@@ -22,7 +22,7 @@ export static class ProductList{
         this.productList = [];
         this.quantityList = [];
     }
-
+    
     public addProduct(product:Product) :void 
     { 
         this.productList.push(product);
@@ -36,10 +36,14 @@ export static class ProductList{
         this.productList.splice(index, 1);
         this.quantityList.splice(index, 1);
     }
-    public getProductList():ProductList
+    public getProductList():Product[]
     {
         let productList = this.productList;
         return productList;
+    }
+    public getQuantityList(): number[]
+    {
+        return this.quantityList;
     }
 
 }
@@ -65,11 +69,9 @@ function viewCartTotal() {
 
 //ShoppingCart View
 export ShoppingCartView{
-    private productList: ProductList;
 
-    constructor(productList:ProductList)
+    constructor()
     {
-        this.productList = productList;
     }
 
     getView:string (productName: string, productPrice: number, productDescription: string, quantity: number )
@@ -81,26 +83,22 @@ export ShoppingCartView{
 
 //Show total price
 export TotalPriceView{
-        private productList: ProductList;
 
-    constructor(productList:ProductList)
+    constructor()
     {
-        this.productList = productList;
     }
 
-    getView:string (total:String )
+    getView:string (total:number )
     {
-        return "Shopping Cart Total: " + total;
+        return "\nShopping Cart Total: " + total;
     }
 
 }
 //Show list of product names
 export ProductNamesView{
-    private productList: ProductList;
 
-    constructor(productList:ProductList)
+    constructor()
     {
-        this.productList = productList;
     }
 
     getView:string (productName: string)
