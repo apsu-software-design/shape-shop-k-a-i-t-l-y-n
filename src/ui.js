@@ -87,7 +87,7 @@ function removeItemFromCart() {
 }
 function viewItemsInCart() {
     var productList = products_1.ProductList.getProductList();
-    var quantityList = products_1.ProductList.getQuantity();
+    var quantityList = products_1.ProductList.getQuantityList();
     for (var i = 0; i < products_1.ProductList.getProductList().length; i++) {
         var productName = productList[i].getName();
         var productPrice = productList[i].getPrice();
@@ -99,7 +99,7 @@ function viewItemsInCart() {
 function viewCartTotal() {
     var total = 0;
     var productList = products_1.ProductList.getProductList();
-    var quantityList = products_1.ProductList.getQuantity();
+    var quantityList = products_1.ProductList.getQuantityList();
     for (var i = 0; i < products_1.ProductList.getProductList().length; i++) {
         total += productList[i].getPrice() * quantityList[i];
     }

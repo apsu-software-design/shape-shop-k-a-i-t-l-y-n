@@ -98,7 +98,7 @@ function removeItemFromCart() {
 
 function viewItemsInCart() {
     let productList:Product[] = ProductList.getProductList();
-    let quantityList:number[] = ProductList.getQuantity();
+    let quantityList:number[] = ProductList.getQuantityList();
 
     for (let i = 0; i < ProductList.getProductList().length; i++) {
         let productName = productList[i].getName();
@@ -113,7 +113,7 @@ function viewItemsInCart() {
 function viewCartTotal() {
     let total: number = 0;
     let productList: Product[] = ProductList.getProductList();
-    let quantityList: number[] = ProductList.getQuantity();
+    let quantityList: number[] = ProductList.getQuantityList();
 
     for (let i = 0; i < ProductList.getProductList().length; i++) {
         total += productList[i].getPrice() * quantityList[i];
