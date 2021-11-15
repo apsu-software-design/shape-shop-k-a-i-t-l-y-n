@@ -19,20 +19,20 @@ var ProductList = /** @class */ (function () {
         this.productList = [];
         this.quantityList = [];
     }
-    ProductList.prototype.addProduct = function (product) {
+    ProductList.addProduct = function (product) {
         this.productList.push(product);
     };
-    ProductList.prototype.addQuantity = function (quantity) {
+    ProductList.addQuantity = function (quantity) {
         this.quantityList.push(quantity);
     };
-    ProductList.prototype.removeProduct = function (index) {
+    ProductList.removeProduct = function (index) {
         this.productList.splice(index, 1);
         this.quantityList.splice(index, 1);
     };
-    ProductList.prototype.getProductList = function () {
+    ProductList.getProductList = function () {
         return this.productList;
     };
-    ProductList.prototype.getQuantityList = function () {
+    ProductList.getQuantityList = function () {
         return this.quantityList;
     };
     return ProductList;
@@ -61,7 +61,7 @@ var ShoppingCartView = /** @class */ (function () {
     function ShoppingCartView(productList) {
         this.productList = productList;
     }
-    ShoppingCartView.prototype.getView = function (productName, productPrice, productDescription, quantity) {
+    ShoppingCartView.getView = function (productName, productPrice, productDescription, quantity) {
         return "\nName: " + productName + "\nPrice: " + productPrice + "\nDescription: " + productDescription + "\nQuantity: " + quantity;
     };
     return ShoppingCartView;
@@ -72,7 +72,7 @@ var TotalPriceView = /** @class */ (function () {
     function TotalPriceView(productList) {
         this.productList = productList;
     }
-    TotalPriceView.prototype.getView = function (total) {
+    TotalPriceView.getView = function (total) {
         return "\nShopping Cart Total: " + total;
     };
     return TotalPriceView;
@@ -83,7 +83,7 @@ var ProductNamesView = /** @class */ (function () {
     function ProductNamesView(productList) {
         this.productList = productList;
     }
-    ProductNamesView.prototype.getView = function (productName) {
+    ProductNamesView.getView = function (productName) {
         return "\nName: " + productName;
     };
     return ProductNamesView;

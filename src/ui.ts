@@ -106,7 +106,7 @@ function viewItemsInCart() {
         let productDescription = productList[i].getDescription();
         let quantity = quantityList[i];
 
-        console.log(ShoppingCartView.getView(productList, productName, productPrice, productDescription, quantity));
+        console.log(ShoppingCartView.getView(productName, productPrice, productDescription, quantity));
     }
 }
 

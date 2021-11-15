@@ -75,10 +75,10 @@ function letUserSelectQuantity() {
 }
 function removeItemFromCart() {
     console.log("Select an item to be removed from the cart.\n  ");
+    var productList = products_1.ProductList.getProductList();
     for (var i = 0; i < products_1.ProductList.getProductList().length; i++) {
-        var productList = products_1.ProductList.getProductList();
         var productName = productList[i].getName();
-        products_1.ProductNamesView.getView(productName);
+        console.log(products_1.ProductNamesView.getView(productName));
     }
     var response = readlineSync.question('> ');
     var toRemove = parseInt(response);
@@ -93,7 +93,7 @@ function viewItemsInCart() {
         var productPrice = productList[i].getPrice();
         var productDescription = productList[i].getDescription();
         var quantity = quantityList[i];
-        console.log(products_1.ShoppingCartView.getView(productList, productName, productPrice, productDescription, quantity));
+        console.log(products_1.ShoppingCartView.getView(productName, productPrice, productDescription, quantity));
     }
 }
 function viewCartTotal() {
