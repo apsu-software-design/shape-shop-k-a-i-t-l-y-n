@@ -23,24 +23,24 @@ export class ProductList{
         this.quantityList = [];
     }
     
-    public addProduct(product:Product) :void 
+    static addProduct(product:Product) :void 
     { 
         this.productList.push(product);
     }
-    public addQuantity(quantity: number) : void
+    static addQuantity(quantity: number) : void
     {
          this.quantityList.push(quantity);
     }
-    public removeProduct(index:number):void
+    static removeProduct(index:number):void
     {
         this.productList.splice(index, 1);
         this.quantityList.splice(index, 1);
     }
-    public getProductList():Product[]
+    static getProductList():Product[]
     {
         return this.productList;
     }
-    public getQuantityList(): number[]
+    static getQuantityList(): number[]
     {
         return this.quantityList;
     }
@@ -75,7 +75,7 @@ export class ShoppingCartView{
         this.productList = productList
     }
 
-    public getView (productName: string, productPrice: number, productDescription: string, quantity: number ):string
+    static getView (productName: string, productPrice: number, productDescription: string, quantity: number ):string
     {
         return "\nName: " + productName + "\nPrice: " + productPrice + "\nDescription: " + productDescription + "\nQuantity: " + quantity;
     }
@@ -91,7 +91,7 @@ export class TotalPriceView{
         this.productList = productList
     }
 
-    public getView(total:number ) :string
+    static getView(total:number ) :string
     {
         return "\nShopping Cart Total: " + total;
     }
@@ -106,7 +106,7 @@ export class ProductNamesView{
         this.productList = productList
     }
 
-    public getView(productName: string) :string
+    static getView(productName: string) :string
     {
         return "\nName: " + productName;
     }
