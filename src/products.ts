@@ -1,4 +1,4 @@
-export class Product {
+export static class Product {
     private name: string;
     private price: number;
     private description: string;
@@ -14,7 +14,7 @@ export class Product {
     public getDescription(): string { return this.description; }
 }
 //MODEL
-export class ProductList{
+export static class ProductList{
     private productList: Product[];
     private quantityList: number[];
 

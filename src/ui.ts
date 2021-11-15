@@ -2,12 +2,13 @@
 //@author James Church
 
 import readlineSync = require('readline-sync'); //for easier repeated prompts
-import {Product}, {ProductList} , {ShoppingCartView}, {TotalCartView}from './products';
-import {ProductList} from './products';
+import {Product}, {ProductList} , {ShoppingCartView}, {TotalPriceView}, {ProductNamesView} from './products';
 
+/** 
 // Hey look. It's a global variable. This is totally cool, right?
 let shopping_cart: Product[] = [];
 let quantity_cart: number[] = [];
+*/
 
 /**
  * Function to run the UI
@@ -15,6 +16,7 @@ let quantity_cart: number[] = [];
 export function start() {
   showMainMenu();
 }
+
 
 /**
  * The main menu. Will show until the user exits
@@ -59,9 +61,9 @@ function letUserSelectItem() {
     let response = readlineSync.question('> ')
 
     switch(response) { //handle each response
-      case '1': shopping_cart.push(new Product("Triangle", 3.5, "It's got three sides!")); break;
-      case '2': shopping_cart.push(new Product("Square", 4.5, "It's got four sides!")); break;
-      case '3': shopping_cart.push(new Product("Pentagon", 5.5, "It's got five sides!")); break;
+      case '1': ProductList.addItemToCart(new Product("Triangle", 3.5, "It's got three sides!")); break;
+      case '2': ProductList.addItemToCart(new Product("Square", 4.5, "It's got four sides!")); break;
+      case '3': ProductList.addItemToCart(new Product("Pentagon", 5.5, "It's got five sides!")); break;
       default: console.log('Invalid option!');
     }
     console.log(''); //extra empty line for revisiting
@@ -72,7 +74,7 @@ function letUserSelectQuantity() {
   `);
 
     let response = readlineSync.question('> ')
-    quantity_cart.push(parseInt(response));
+    ProductList.addItemToCart(parseInt(response));
     console.log(''); //extra empty line for revisiting
 }
 
