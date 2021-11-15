@@ -33,8 +33,9 @@ export class ProductList{
     }
     public removeProduct(index:number):void
     {
-        this.productList.splice(index, 1);
-        this.quantityList.splice(index, 1);
+        
+        this.productList.splice(index - 1, 1);
+        this.quantityList.splice(index -1, 1);
     }
 
     public getProductList():Product[] { return this.productList; }
