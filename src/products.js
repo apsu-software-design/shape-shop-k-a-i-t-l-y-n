@@ -26,8 +26,8 @@ var ProductList = /** @class */ (function () {
         this.quantityList.push(quantity);
     };
     ProductList.prototype.removeProduct = function (index) {
-        this.productList.splice(index, 1);
-        this.quantityList.splice(index, 1);
+        this.productList.splice(index - 1, 1);
+        this.quantityList.splice(index - 1, 1);
     };
     ProductList.prototype.getProductList = function () { return this.productList; };
     ProductList.prototype.getQuantityList = function () { return this.quantityList; };
