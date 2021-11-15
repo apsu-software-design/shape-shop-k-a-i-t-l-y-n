@@ -104,7 +104,7 @@ export class ProductNamesView{
     static getView(productName: string, index: number) :string
     {
         let itemCount = index + 1
-        return  "\n" + itemCount + "Name: " + productName;
+        return  "\n" + itemCount + ". Name: " + productName;
     }
     
 }
