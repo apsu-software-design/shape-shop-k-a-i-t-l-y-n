@@ -79,8 +79,9 @@ var ProductNamesView = /** @class */ (function () {
     function ProductNamesView(productList) {
         this.productList = productList;
     }
-    ProductNamesView.getView = function (productName) {
-        return "\nName: " + productName;
+    ProductNamesView.getView = function (productName, index) {
+        var itemCount = index + 1;
+        return itemCount + "\nName: " + productName;
     };
     return ProductNamesView;
 }());
