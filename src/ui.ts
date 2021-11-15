@@ -81,11 +81,11 @@ function letUserSelectQuantity() {
 function removeItemFromCart() {
     console.log(`Select an item to be removed from the cart.
   `);
+    let productList:Product[] = ProductList.getProductList();
 
     for (let i = 0; i < ProductList.getProductList().length; i++) {
-        let productList = ProductList.getProductList();
         let productName = productList[i].getName()
-        ProductNamesView.getView(productName);
+        console.log(ProductNamesView.getView(productName));
     }
 
     let response = readlineSync.question('> ')
@@ -97,8 +97,8 @@ function removeItemFromCart() {
 }
 
 function viewItemsInCart() {
-    let productList = ProductList.getProductList();
-    let quantityList = ProductList.getQuantity();
+    let productList:Product[] = ProductList.getProductList();
+    let quantityList:number[] = ProductList.getQuantity();
 
     for (let i = 0; i < ProductList.getProductList().length; i++) {
         let productName = productList[i].getName();
@@ -106,17 +106,17 @@ function viewItemsInCart() {
         let productDescription = productList[i].getDescription();
         let quantity = quantityList[i];
 
-        ShoppingCartView.getView(productList, productName, productPrice, productDescription, quantity);
+        console.log(ShoppingCartView.getView(productList, productName, productPrice, productDescription, quantity));
     }
 }
 
 function viewCartTotal() {
     let total: number = 0;
-    let productList = ProductList.getProductList();
-    let quantityList = ProductList.getQuantity();
+    let productList: Product[] = ProductList.getProductList();
+    let quantityList: number[] = ProductList.getQuantity();
 
     for (let i = 0; i < ProductList.getProductList().length; i++) {
         total += productList[i].getPrice() * quantityList[i];
     }
-    TotalPriceView.getView(total);
+    console.log(TotalPriceView.getView(total));
 }

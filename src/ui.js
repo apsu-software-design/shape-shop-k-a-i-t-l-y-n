@@ -93,7 +93,7 @@ function viewItemsInCart() {
         var productPrice = productList[i].getPrice();
         var productDescription = productList[i].getDescription();
         var quantity = quantityList[i];
-        products_1.ShoppingCartView.getView(productList, productName, productPrice, productDescription, quantity);
+        console.log(products_1.ShoppingCartView.getView(productList, productName, productPrice, productDescription, quantity));
     }
 }
 function viewCartTotal() {
@@ -103,5 +103,5 @@ function viewCartTotal() {
     for (var i = 0; i < products_1.ProductList.getProductList().length; i++) {
         total += productList[i].getPrice() * quantityList[i];
     }
-    products_1.TotalPriceView.getView(total);
+    console.log(products_1.TotalPriceView.getView(total));
 }
