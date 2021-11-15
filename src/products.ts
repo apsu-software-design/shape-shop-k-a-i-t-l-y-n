@@ -36,14 +36,8 @@ export class ProductList{
         this.productList.splice(index, 1);
         this.quantityList.splice(index, 1);
     }
-    static getProductList():Product[]
-    {
-        return this.productList;
-    }
-    static getQuantityList(): number[]
-    {
-        return this.quantityList;
-    }
+    static getProductList():Product[] { return this.productList; }
+    static getQuantityList(): number[] { return this.quantityList; }
 
 }
 

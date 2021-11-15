@@ -29,12 +29,8 @@ var ProductList = /** @class */ (function () {
         this.productList.splice(index, 1);
         this.quantityList.splice(index, 1);
     };
-    ProductList.getProductList = function () {
-        return this.productList;
-    };
-    ProductList.getQuantityList = function () {
-        return this.quantityList;
-    };
+    ProductList.getProductList = function () { return this.productList; };
+    ProductList.getQuantityList = function () { return this.quantityList; };
     return ProductList;
 }());
 exports.ProductList = ProductList;
