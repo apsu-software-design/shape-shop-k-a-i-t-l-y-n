@@ -41,7 +41,7 @@ export class ProductList{
 
 }
 
-//VIEW
+/** 
 function viewItemsInCart() {
     for (let i = 0; i < shopping_cart.length; i++) {
         console.log("");
@@ -58,7 +58,7 @@ function viewCartTotal() {
         total += shopping_cart[i].getPrice() * quantity_cart[i];
     }
     console.log("Shopping Cart Total: "+total);
-}
+}\*/
 
 //ShoppingCart View
 export ShoppingCartView{
@@ -69,27 +69,44 @@ export ShoppingCartView{
         this.productList = productList;
     }
 
-    getView:string()
+    getView:string (productName: string, productPrice: number, productDescription: string, quantity: number )
     {
-        for
-        String shoppingCart = "Name: " + this.product.getName() + "\nPrice: " + this.product.getPrice() + "\nDescription: " + this.product.getDescription()
-        + "\nQuantity: " + 
+        return "\nName: " + productName + "\nPrice: " + productPrice + "\nDescription: " + productDescription + "\nQuantity: " + quantity;
     }
-
-
 
 }
 
 //Show total price
 export TotalPriceView{
+        private productList: ProductList;
+
+    constructor(productList:ProductList)
+    {
+        this.productList = productList;
+    }
+
+    getView:string (total:String )
+    {
+        return "Shopping Cart Total: " + total;
+    }
 
 }
 //Show list of product names
 export ProductNamesView{
+    private productList: ProductList;
+
+    constructor(productList:ProductList)
+    {
+        this.productList = productList;
+    }
+
+    getView:string (productName: string)
+    {
+        return "\nName: " + productName;
+    }
     
 }
 
-//getView returns string object
 
 
 

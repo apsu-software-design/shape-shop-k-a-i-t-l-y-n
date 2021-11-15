@@ -2,7 +2,8 @@
 //@author James Church
 
 import readlineSync = require('readline-sync'); //for easier repeated prompts
-import {Product} from './products';
+import {Product}, {ProductList} , {ShoppingCartView}, {TotalCartView}from './products';
+import {ProductList} from './products';
 
 // Hey look. It's a global variable. This is totally cool, right?
 let shopping_cart: Product[] = [];
