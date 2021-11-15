@@ -23,10 +23,13 @@ export static class ProductList{
         this.quantityList = [];
     }
 
-    public addProduct(product:Product, quantity: number) :void 
+    public addProduct(product:Product) :void 
     { 
         this.productList.push(product);
-        this.quantityList.push(quantity);
+    }
+    public addQuantity(quantity: number) : void
+    {
+         this.quantityList.push(quantity);
     }
     public removeProduct(index:number):void
     {
