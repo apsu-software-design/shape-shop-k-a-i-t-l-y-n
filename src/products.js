@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProductList = exports.Product = void 0;
+exports.ProductNamesView = exports.TotalPriceView = exports.ShoppingCartView = exports.ProductList = exports.Product = void 0;
 var Product = /** @class */ (function () {
     function Product(name, price, description) {
         this.name = name;
@@ -22,14 +22,68 @@ var ProductList = /** @class */ (function () {
     ProductList.prototype.addProduct = function (product) {
         this.productList.push(product);
     };
+    ProductList.prototype.addQuantity = function (quantity) {
+        this.quantityList.push(quantity);
+    };
     ProductList.prototype.removeProduct = function (index) {
         this.productList.splice(index, 1);
+        this.quantityList.splice(index, 1);
     };
     ProductList.prototype.getProductList = function () {
         var productList = this.productList;
         return productList;
     };
+    ProductList.prototype.getQuantityList = function () {
+        return this.quantityList;
+    };
     return ProductList;
 }());
 exports.ProductList = ProductList;
-//VIEW
+/**
+function viewItemsInCart() {
+    for (let i = 0; i < shopping_cart.length; i++) {
+        console.log("");
+        console.log("       Name: "+shopping_cart[i].getName());
+        console.log("      Price: "+shopping_cart[i].getPrice());
+        console.log("Description: "+shopping_cart[i].getDescription());
+        console.log("   Quantity: "+quantity_cart[i]);
+    }
+}
+
+function viewCartTotal() {
+    let total: number = 0;
+    for (let i = 0; i < shopping_cart.length; i++) {
+        total += shopping_cart[i].getPrice() * quantity_cart[i];
+    }
+    console.log("Shopping Cart Total: "+total);
+}\*/
+//ShoppingCart View
+var ShoppingCartView = /** @class */ (function () {
+    function ShoppingCartView() {
+    }
+    return ShoppingCartView;
+}());
+exports.ShoppingCartView = ShoppingCartView;
+{
+    return "\nName: " + productName + "\nPrice: " + productPrice + "\nDescription: " + productDescription + "\nQuantity: " + quantity;
+}
+//Show total price
+var TotalPriceView = /** @class */ (function () {
+    function TotalPriceView() {
+    }
+    return TotalPriceView;
+}());
+exports.TotalPriceView = TotalPriceView;
+{
+    return "\nShopping Cart Total: " + total;
+}
+//Show list of product names
+var ProductNamesView = /** @class */ (function () {
+    function ProductNamesView() {
+    }
+    return ProductNamesView;
+}());
+exports.ProductNamesView = ProductNamesView;
+{
+    return "\nName: " + productName;
+}

@@ -1,4 +1,4 @@
-export static class Product {
+export class Product {
     private name: string;
     private price: number;
     private description: string;
@@ -14,7 +14,7 @@ export static class Product {
     public getDescription(): string { return this.description; }
 }
 //MODEL
-export static class ProductList{
+export class ProductList{
     private productList: Product[];
     private quantityList: number[];
 
@@ -68,7 +68,7 @@ function viewCartTotal() {
 }\*/
 
 //ShoppingCart View
-export ShoppingCartView{
+export class ShoppingCartView{
 
     constructor()
     {
@@ -82,7 +82,7 @@ export ShoppingCartView{
 }
 
 //Show total price
-export TotalPriceView{
+export class TotalPriceView{
 
     constructor()
     {
@@ -95,7 +95,7 @@ export TotalPriceView{
 
 }
 //Show list of product names
-export ProductNamesView{
+export class ProductNamesView{
 
     constructor()
     {
