@@ -101,9 +101,10 @@ export class ProductNamesView{
         this.productList = productList
     }
 
-    static getView(productName: string) :string
+    static getView(productName: string, index: number) :string
     {
-        return "\nName: " + productName;
+        let itemCount = index + 1
+        return itemCount + "\nName: " + productName;
     }
     
 }
