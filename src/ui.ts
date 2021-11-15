@@ -97,12 +97,14 @@ function removeItemFromCart() {
 }
 
 function viewItemsInCart() {
+    let productList = ProductList.getProductList();
+    let quantityList = ProductList.getQuantity();
+
     for (let i = 0; i < ProductList.getProductList().length; i++) {
-        let productList = ProductList.getProductList();
         let productName = productList[i].getName();
         let productPrice = productList[i].getPrice();
         let productDescription = productList[i].getDescription();
-        let quantity = productList.quantityList[i];
+        let quantity = quantityList[i];
 
         ShoppingCartView.getView(productList, productName, productPrice, productDescription, quantity);
     }
@@ -110,9 +112,11 @@ function viewItemsInCart() {
 
 function viewCartTotal() {
     let total: number = 0;
-     let productList = ProductList.getProductList();
+    let productList = ProductList.getProductList();
+    let quantityList = ProductList.getQuantity();
+
     for (let i = 0; i < ProductList.getProductList().length; i++) {
-        total += productList[i].getPrice() * ProductList.quantityList[i];
+        total += productList[i].getPrice() * quantityList[i];
     }
     TotalPriceView.getView(total);
 }
