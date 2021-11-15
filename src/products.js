@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.ProductNamesView = exports.TotalPriceView = exports.ShoppingCartView = exports.ProductList = exports.Product = void 0;
 var Product = /** @class */ (function () {
     function Product(name, price, description) {
@@ -16,8 +16,8 @@ exports.Product = Product;
 //MODEL
 var ProductList = /** @class */ (function () {
     function ProductList() {
-        this.productList = [];
-        this.quantityList = [];
+        ProductList.productList = [];
+        ProductList.quantityList = [];
     }
     ProductList.addProduct = function (product) {
         this.productList.push(product);
