@@ -2,7 +2,11 @@
 //@author James Church
 
 import readlineSync = require('readline-sync'); //for easier repeated prompts
-import {Product}, {ProductList} , {ShoppingCartView}, {TotalPriceView}, {ProductNamesView} from './products';
+import {Product} from './products';
+import {ProductList} from './products';
+import {ShoppingCartView} from './products';
+import {TotalPriceView} from './products';
+import {ProductNamesView} from './products';
 
 /** 
 // Hey look. It's a global variable. This is totally cool, right?
