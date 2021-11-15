@@ -5,10 +5,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.start = void 0;
 var readlineSync = require("readline-sync"); //for easier repeated prompts
 var products_1 = require("./products");
-var products_2 = require("./products");
-var products_3 = require("./products");
-var products_4 = require("./products");
-var products_5 = require("./products");
 /**
 // Hey look. It's a global variable. This is totally cool, right?
 let shopping_cart: Product[] = [];
@@ -58,13 +54,14 @@ function letUserSelectItem() {
     var response = readlineSync.question('> ');
     switch (response) { //handle each response
         case '1':
-            products_2.ProductList.addProduct(new products_1.Product("Triangle", 3.5, "It's got three sides!"));
+            var product1 = new products_1.Product("Triangle", 3.5, "It's got three sides!");
+            products_1.ProductList.addProduct(product1);
             break;
         case '2':
-            products_2.ProductList.addProduct(new products_1.Product("Square", 4.5, "It's got four sides!"));
+            products_1.ProductList.addProduct(new products_1.Product("Square", 4.5, "It's got four sides!"));
             break;
         case '3':
-            products_2.ProductList.addProduct(new products_1.Product("Pentagon", 5.5, "It's got five sides!"));
+            products_1.ProductList.addProduct(new products_1.Product("Pentagon", 5.5, "It's got five sides!"));
             break;
         default: console.log('Invalid option!');
     }
@@ -73,38 +70,38 @@ function letUserSelectItem() {
 function letUserSelectQuantity() {
     console.log("How many of this shape would you like to purchase?\n  ");
     var response = readlineSync.question('> ');
-    products_2.ProductList.addQuantity(parseInt(response));
+    products_1.ProductList.addQuantity(parseInt(response));
     console.log(''); //extra empty line for revisiting
 }
 function removeItemFromCart() {
     console.log("Select an item to be removed from the cart.\n  ");
-    for (var i = 0; i < products_2.ProductList.getProductList().length; i++) {
-        var productList = products_2.ProductList.getProductList();
+    for (var i = 0; i < products_1.ProductList.getProductList().length; i++) {
+        var productList = products_1.ProductList.getProductList();
         var productName = productList[i].getName();
-        products_5.ProductNamesView.getView(productName);
+        products_1.ProductNamesView.getView(productName);
     }
     var response = readlineSync.question('> ');
     var toRemove = parseInt(response);
-    products_2.ProductList.removeProduct(toRemove);
+    products_1.ProductList.removeProduct(toRemove);
     console.log(''); //extra empty line for revisiting
 }
 function viewItemsInCart() {
-    var productList = products_2.ProductList.getProductList();
-    var quantityList = products_2.ProductList.getQuantity();
-    for (var i = 0; i < products_2.ProductList.getProductList().length; i++) {
+    var productList = products_1.ProductList.getProductList();
+    var quantityList = products_1.ProductList.getQuantity();
+    for (var i = 0; i < products_1.ProductList.getProductList().length; i++) {
         var productName = productList[i].getName();
         var productPrice = productList[i].getPrice();
         var productDescription = productList[i].getDescription();
         var quantity = quantityList[i];
-        products_3.ShoppingCartView.getView(productList, productName, productPrice, productDescription, quantity);
+        products_1.ShoppingCartView.getView(productList, productName, productPrice, productDescription, quantity);
     }
 }
 function viewCartTotal() {
     var total = 0;
-    var productList = products_2.ProductList.getProductList();
-    var quantityList = products_2.ProductList.getQuantity();
-    for (var i = 0; i < products_2.ProductList.getProductList().length; i++) {
+    var productList = products_1.ProductList.getProductList();
+    var quantityList = products_1.ProductList.getQuantity();
+    for (var i = 0; i < products_1.ProductList.getProductList().length; i++) {
         total += productList[i].getPrice() * quantityList[i];
     }
-    products_4.TotalPriceView.getView(total);
+    products_1.TotalPriceView.getView(total);
 }

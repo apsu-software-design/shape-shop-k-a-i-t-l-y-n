@@ -2,11 +2,7 @@
 //@author James Church
 
 import readlineSync = require('readline-sync'); //for easier repeated prompts
-import {Product} from './products';
-import {ProductList} from './products';
-import {ShoppingCartView} from './products';
-import {TotalPriceView} from './products';
-import {ProductNamesView} from './products';
+import {Product, ProductList, ShoppingCartView, TotalPriceView, ProductNamesView} from './products';
 
 /** 
 // Hey look. It's a global variable. This is totally cool, right?
@@ -65,7 +61,7 @@ function letUserSelectItem() {
     let response = readlineSync.question('> ')
 
     switch(response) { //handle each response
-      case '1': ProductList.addProduct(new Product("Triangle", 3.5, "It's got three sides!")); break;
+      case '1': let product1:Product = new Product("Triangle", 3.5, "It's got three sides!"); ProductList.addProduct(product1); break;
       case '2': ProductList.addProduct(new Product("Square", 4.5, "It's got four sides!")); break;
       case '3': ProductList.addProduct(new Product("Pentagon", 5.5, "It's got five sides!")); break;
       default: console.log('Invalid option!');

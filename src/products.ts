@@ -15,8 +15,8 @@ export class Product {
 }
 //MODEL
 export class ProductList{
-    public productList: Product[];
-    public quantityList: number[];
+    private productList: Product[];
+    private quantityList: number[];
 
     public constructor(){
         this.productList = [];
