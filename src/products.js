@@ -30,8 +30,7 @@ var ProductList = /** @class */ (function () {
         this.quantityList.splice(index, 1);
     };
     ProductList.prototype.getProductList = function () {
-        var productList = this.productList;
-        return productList;
+        return this.productList;
     };
     ProductList.prototype.getQuantityList = function () {
         return this.quantityList;
@@ -59,7 +58,8 @@ function viewCartTotal() {
 }\*/
 //ShoppingCart View
 var ShoppingCartView = /** @class */ (function () {
-    function ShoppingCartView() {
+    function ShoppingCartView(productList) {
+        this.productList = productList;
     }
     ShoppingCartView.prototype.getView = function (productName, productPrice, productDescription, quantity) {
         return "\nName: " + productName + "\nPrice: " + productPrice + "\nDescription: " + productDescription + "\nQuantity: " + quantity;
@@ -69,7 +69,8 @@ var ShoppingCartView = /** @class */ (function () {
 exports.ShoppingCartView = ShoppingCartView;
 //Show total price
 var TotalPriceView = /** @class */ (function () {
-    function TotalPriceView() {
+    function TotalPriceView(productList) {
+        this.productList = productList;
     }
     TotalPriceView.prototype.getView = function (total) {
         return "\nShopping Cart Total: " + total;
@@ -79,7 +80,8 @@ var TotalPriceView = /** @class */ (function () {
 exports.TotalPriceView = TotalPriceView;
 //Show list of product names
 var ProductNamesView = /** @class */ (function () {
-    function ProductNamesView() {
+    function ProductNamesView(productList) {
+        this.productList = productList;
     }
     ProductNamesView.prototype.getView = function (productName) {
         return "\nName: " + productName;

@@ -15,8 +15,8 @@ export class Product {
 }
 //MODEL
 export class ProductList{
-    private productList: Product[];
-    private quantityList: number[];
+    public productList: Product[];
+    public quantityList: number[];
 
     public constructor(){
         this.productList = [];
@@ -38,8 +38,7 @@ export class ProductList{
     }
     public getProductList():Product[]
     {
-        let productList = this.productList;
-        return productList;
+        return this.productList;
     }
     public getQuantityList(): number[]
     {
@@ -69,9 +68,11 @@ function viewCartTotal() {
 
 //ShoppingCart View
 export class ShoppingCartView{
+    private productList: ProductList
 
-    constructor()
+    constructor(productList: ProductList)
     {
+        this.productList = productList
     }
 
     public getView (productName: string, productPrice: number, productDescription: string, quantity: number ):string
@@ -83,9 +84,11 @@ export class ShoppingCartView{
 
 //Show total price
 export class TotalPriceView{
+    private productList: ProductList
 
-    constructor()
+    constructor(productList: ProductList)
     {
+        this.productList = productList
     }
 
     public getView(total:number ) :string
@@ -96,9 +99,11 @@ export class TotalPriceView{
 }
 //Show list of product names
 export class ProductNamesView{
+    private productList: ProductList
 
-    constructor()
+    constructor(productList: ProductList)
     {
+        this.productList = productList
     }
 
     public getView(productName: string) :string
