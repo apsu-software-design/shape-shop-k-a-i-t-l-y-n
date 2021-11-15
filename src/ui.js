@@ -11,7 +11,7 @@ let shopping_cart: Product[] = [];
 let quantity_cart: number[] = [];
 */
 //Global variable Product List
-var productListModel;
+var productListModel = new products_1.ProductList;
 /**
  * Function to run the UI
  */

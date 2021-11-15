@@ -64,7 +64,7 @@ function letUserSelectItem() {
     let response = readlineSync.question('> ')
 
     switch(response) { //handle each response
-      case '1': let product1:Product = new Product("Triangle", 3.5, "It's got three sides!"); productListModel.addProduct(product1); break;
+      case '1': productListModel.addProduct(new Product("Triangle", 3.5, "It's got three sides!")); break;
       case '2': productListModel.addProduct(new Product("Square", 4.5, "It's got four sides!")); break;
       case '3': productListModel.addProduct(new Product("Pentagon", 5.5, "It's got five sides!")); break;
       default: console.log('Invalid option!');
@@ -88,7 +88,7 @@ function removeItemFromCart() {
 
     for (let i = 0; i < productListModel.getProductList().length; i++) {
         let productName = productList[i].getName()
-        console.log(ProductNamesView.getView(productName));
+        console.log(ProductNamesView.getView(productName, i));
     }
 
     let response = readlineSync.question('> ')
