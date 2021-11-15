@@ -74,7 +74,7 @@ export class ShoppingCartView{
     {
     }
 
-    getView:string (productName: string, productPrice: number, productDescription: string, quantity: number )
+    public getView (productName: string, productPrice: number, productDescription: string, quantity: number ):string
     {
         return "\nName: " + productName + "\nPrice: " + productPrice + "\nDescription: " + productDescription + "\nQuantity: " + quantity;
     }
@@ -88,7 +88,7 @@ export class TotalPriceView{
     {
     }
 
-    getView:string (total:number )
+    public getView(total:number ) :string
     {
         return "\nShopping Cart Total: " + total;
     }
@@ -101,7 +101,7 @@ export class ProductNamesView{
     {
     }
 
-    getView:string (productName: string)
+    public getView(productName: string) :string
     {
         return "\nName: " + productName;
     }

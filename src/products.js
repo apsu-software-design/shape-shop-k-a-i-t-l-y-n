@@ -61,29 +61,29 @@ function viewCartTotal() {
 var ShoppingCartView = /** @class */ (function () {
     function ShoppingCartView() {
     }
+    ShoppingCartView.prototype.getView = function (productName, productPrice, productDescription, quantity) {
+        return "\nName: " + productName + "\nPrice: " + productPrice + "\nDescription: " + productDescription + "\nQuantity: " + quantity;
+    };
     return ShoppingCartView;
 }());
 exports.ShoppingCartView = ShoppingCartView;
-{
-    return "\nName: " + productName + "\nPrice: " + productPrice + "\nDescription: " + productDescription + "\nQuantity: " + quantity;
-}
 //Show total price
 var TotalPriceView = /** @class */ (function () {
     function TotalPriceView() {
     }
+    TotalPriceView.prototype.getView = function (total) {
+        return "\nShopping Cart Total: " + total;
+    };
     return TotalPriceView;
 }());
 exports.TotalPriceView = TotalPriceView;
-{
-    return "\nShopping Cart Total: " + total;
-}
 //Show list of product names
 var ProductNamesView = /** @class */ (function () {
     function ProductNamesView() {
     }
+    ProductNamesView.prototype.getView = function (productName) {
+        return "\nName: " + productName;
+    };
     return ProductNamesView;
 }());
 exports.ProductNamesView = ProductNamesView;
-{
-    return "\nName: " + productName;
-}
